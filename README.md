@@ -1,4 +1,4 @@
-# Lora-payload-decrypt
+# Lora-decrypt
 
 Node container for decrypting LoRaWan payloads from Thingpark/Actility platform.
 
@@ -8,11 +8,11 @@ Node container for decrypting LoRaWan payloads from Thingpark/Actility platform.
 
 ## Usage
 
-`npm install lora-payload-decrypt`
+`npm install lora-decrypt`
 
 
 ```Node.js
-> lora = require('./lora_decrypt.js');
+> lora = require('lora-decrypt');
 > payload = '11daf7a44d5e2bbe557176e9e6c8da';
 > sequence_counter = 2;
 > key = 'AABBCCDDEEFFAABBCCDDEEFFAABBCCDD';
