@@ -1,7 +1,8 @@
 var aesjs = require('aes-js');
 
-function lora_decrypt(payload_hex, sequence_counter, appskey, addr){
+exports.lora_decrypt = function(payload_hex, sequence_counter, appskey, addr){
       
+	
 	var key = new Buffer(appskey, 'hex');
 	var aesEcb = new aesjs.ModeOfOperation.ecb(key);
     var dev_addr = new Buffer(addr, 'hex');
@@ -20,7 +21,7 @@ function lora_decrypt(payload_hex, sequence_counter, appskey, addr){
     				 , (sequence_counter >> 24) & 0xff, 0x00, 0x00]);
     var sBlock = new Uint8Array(16);
 	/*
-	this is an example how Block a is formed according to Lorawan specs)
+	this is an example how Block a is formed according to Lorawan specs
 	Block_A[0]  = 0x01;
 	Block_A[1]  = 0x00;
 	Block_A[2]  = 0x00;
@@ -38,7 +39,7 @@ function lora_decrypt(payload_hex, sequence_counter, appskey, addr){
 	Block_A[14] = 0x00;
 	*/
 				
-     while (size >= 16){
+    while (size >= 16){
         Block_A[15] = ctr & 0xFF;
         ctr += 1;
         sBlock = aesEcb.encrypt(Block_A);
@@ -55,9 +56,8 @@ function lora_decrypt(payload_hex, sequence_counter, appskey, addr){
         sBlock = aesEcb.encrypt(Block_A);
      
         for (i=0;i<16;i++){
-            encbuffer[bufferIndex + i] = buffer[bufferIndex + i] ^ sBlock[i];
-             
-			}
+            encbuffer[bufferIndex + i] = buffer[bufferIndex + i] ^ sBlock[i];   
+		}
     }
  
 	return encbuffer;
