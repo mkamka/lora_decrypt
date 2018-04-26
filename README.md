@@ -4,11 +4,11 @@ Node container for decrypting LoRaWan payloads (FRMpayload) from Thingpark/Actil
 
 - Depends on [aes-js]
 - Based on encrypt/decrypt code in [Lora-net/LoRaMac-node]
-
+- Package.json contains all dependencies
 
 ## Usage
 
-`npm install lora-decrypt`
+`npm install`
 
 
 ```javascript
@@ -20,6 +20,8 @@ Node container for decrypting LoRaWan payloads (FRMpayload) from Thingpark/Actil
 > lora.lora_decrypt(payload_hex, sequence_counter, key, addr);
 [222, 59, 24, 8, 7, 155, 237, 158, 103, 125, 93, 34, 161, 204, 33]
 ```
+Try with exemple.js
+
 Returns Uint8Array
 
 [aes-js]: https://www.npmjs.com/package/aes-js

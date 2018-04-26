@@ -55,7 +55,7 @@ exports.lora_decrypt = function(payload_hex, sequence_counter, appskey, addr){
         ctr += 1;
         sBlock = aesEcb.encrypt(Block_A);
      
-        for (i=0;i<16;i++){
+        for (i=0;i<size;i++){
             encbuffer[bufferIndex + i] = buffer[bufferIndex + i] ^ sBlock[i];   
 		}
     }
