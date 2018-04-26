@@ -1,0 +1,25 @@
+{
+  "name": "lora_decrypt",
+  "version": "1.0.0",
+  "description": "Node container for decrypting LoRaWan payloads (FRMpayload) from Thingpark/Actility platform.",
+  "main": "lora_decrypt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvcf10/lora_decrypt.git"
+  },
+  "author": "mkamka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvcf10/lora_decrypt/issues"
+  },
+  "homepage": "https://github.com/mvcf10/lora_decrypt#readme",
+  "keywords": [
+    "LORA"
+  ],
+  "dependencies": {
+    "aes-js": "^3.1.1"
+  }
+}
